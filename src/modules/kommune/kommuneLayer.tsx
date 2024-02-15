@@ -1,22 +1,23 @@
-import VectorSource from "ol/source/Vector";
 import VectorLayer from "ol/layer/Vector";
-import {Feature} from "ol";
-import {Polygon} from "ol/geom";
-import {GeoJSON} from "ol/format";
-
+import VectorSource from "ol/source/Vector";
+import { GeoJSON } from "ol/format";
+import { Feature } from "ol";
+import { Polygon } from "ol/geom";
+import { StedsNavn } from "../sted/stedsNavn";
 
 export type KommuneLayer = VectorLayer<VectorSource<KommuneFeature>>;
 export type KommuneFeature = {
-    getProperties(): KommuneProperties;
-} & Feature<Polygon>
+  getProperties(): KommuneProperties;
+} & Feature<Polygon>;
 export interface KommuneProperties {
-    kommunenummer: string;
-    navn: string;
+  kommunenummer: string;
+  navn: StedsNavn[];
 }
+
 export const kommuneLayer = new VectorLayer({
-    className: "kommune",
-    source: new VectorSource({
-        url: "/kommune.json",
-        format: new GeoJSON(),
-    }),
+  className: "kommuner",
+  source: new VectorSource({
+    url: "/kommuner.json",
+    format: new GeoJSON(),
+  }),
 });
