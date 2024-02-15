@@ -7,21 +7,21 @@ import { Stroke, Style } from "ol/style";
 
 export type CountryLayer = VectorLayer<VectorSource<CountryFeature>>;
 export type CountryFeature = {
-    getProperties(): CountryProperties;
+  getProperties(): CountryProperties;
 } & Feature<Polygon>;
 export interface CountryProperties {
-    ADMIN: string;
-    ISO_A2: string;
-    ISO_A3: string;
+  ADMIN: string;
+  ISO_A2: string;
+  ISO_A3: string;
 }
 
 export const countryLayer = new VectorLayer({
-    className: "country",
-    source: new VectorSource({
-        url: "/countries.json",
-        format: new GeoJSON(),
-    }),
-    style: new Style({
-        stroke: new Stroke({ color: "black", width: 3 }),
-    }),
+  className: "country",
+  source: new VectorSource({
+    url: "/countries.json",
+    format: new GeoJSON(),
+  }),
+  style: new Style({
+    stroke: new Stroke({ color: "black", width: 3 }),
+  }),
 });
