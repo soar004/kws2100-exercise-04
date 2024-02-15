@@ -17,7 +17,7 @@ const selectedStyle = new Style({
 
 export function KommuneAside() {
   const { features, visibleFeatures, activeFeature, setActiveFeature } =
-    useFeatures<KommuneFeature>((l) => l.getClassName() === "kommuner");
+    useFeatures<KommuneFeature>((l) => l.getClassName() === "kommune");
   useEffect(() => {
     activeFeature?.setStyle(selectedStyle);
     return () => activeFeature?.setStyle(undefined);

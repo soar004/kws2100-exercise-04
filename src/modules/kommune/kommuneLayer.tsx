@@ -15,7 +15,7 @@ export interface KommuneProperties {
 }
 
 export const kommuneLayer = new VectorLayer({
-  className: "kommuner",
+  className: "kommune",
   source: new VectorSource({
     url: "/kommuner.json",
     format: new GeoJSON(),
