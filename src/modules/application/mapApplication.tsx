@@ -37,9 +37,10 @@ export function MapApplication() {
       });
     });
   }
-  const [layers, setLayers] = useState<Layer[]>(
+  const [layers, setLayers] = useState<Layer[]>([
     new TileLayer({ source: new OSM() }),
-  );
+  ]);
+  useEffect(() => map.setLayers(layers), [layers]);
 
   const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
   useEffect(() => {
