@@ -29,10 +29,10 @@ export function MapApplication() {
       </header>
       <nav>
         <div>
-            <label>
-          <input type="checkbox" id="menu-toggle" />
-          Show kommuner
-            </label>
+          <label>
+            <input type="checkbox" id="menu-toggle" />
+            Show kommuner
+          </label>
         </div>
       </nav>
 
