@@ -1,5 +1,5 @@
 // vite.config.js
 export default {
   // config options
-  base: "/04",
+  base: "/kws2100-exercise-04/",
 };
