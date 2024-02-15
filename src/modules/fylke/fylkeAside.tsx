@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { FylkeFeature } from "./fylkeLayer";
 import { Fill, Stroke, Style } from "ol/style";
-import {getStedsnavn } from "../sted/stedsNavn";
+import { getStedsnavn } from "../sted/stedsNavn";
 import { useFeatures } from "../map/useFeatures";
 
 const selectedStyle = new Style({
@@ -30,8 +30,8 @@ export function FylkeAside() {
         <div onMouseLeave={() => setActiveFeature(undefined)}>
           {visibleFeatures
             .sort((a, b) =>
-                getStedsnavn(a.getProperties()).localeCompare(
-                    getStedsnavn(b.getProperties()),
+              getStedsnavn(a.getProperties()).localeCompare(
+                getStedsnavn(b.getProperties()),
               ),
             )
             .map((f) => (
