@@ -14,7 +14,7 @@ export interface KommuneProperties {
   navn: StedsNavn[];
 }
 
-export const kommuneLayer = new VectorLayer({
+export const KommuneLayer = new VectorLayer({
   className: "kommune",
   source: new VectorSource({
     url: "/kommuner.json",

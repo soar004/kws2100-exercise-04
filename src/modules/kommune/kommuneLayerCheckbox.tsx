@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MapContext } from "../map/mapContext";
-import { kommuneLayer } from "./kommuneLayer";
+import { KommuneLayer } from "./kommuneLayer";
 
 export function KommuneLayerCheckbox() {
   const { setLayers } = useContext(MapContext);
@@ -8,10 +8,10 @@ export function KommuneLayerCheckbox() {
 
   useEffect(() => {
     if (checked) {
-      setLayers((old) => [...old, kommuneLayer]);
+      setLayers((old) => [...old, KommuneLayer]);
     }
     return () => {
-      setLayers((old) => old.filter((l) => l !== kommuneLayer));
+      setLayers((old) => old.filter((l) => l !== KommuneLayer));
     };
   }, [checked]);
 
