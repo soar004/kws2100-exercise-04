@@ -6,3 +6,8 @@ export interface StedsNavn {
 export function getStedsnavn({ navn }: { navn: StedsNavn[] }) {
   return navn.find((n) => n.sprak === "nor")!.navn;
 }
+
+export interface stedsNavn {
+  sprak: "nor" | "sma" | "sme" | "smj" | "fkv";
+  navn: string;
+}

@@ -2,7 +2,7 @@ import VectorSource from "ol/source/Vector";
 import VectorLayer from "ol/layer/Vector";
 import { Feature } from "ol";
 import { Polygon } from "ol/geom";
-import stedsNavn from "../sted/stedsNavn";
+import { stedsNavn } from "../sted/stedsNavn";
 import { GeoJSON } from "ol/format";
 import { Stroke, Style } from "ol/style";
 

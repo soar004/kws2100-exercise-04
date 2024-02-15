@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { KommuneFeature } from "./kommuneLayer";
-import { getStedsNavn } from "../sted/stedsNavn";
+import { getStedsnavn } from "../sted/stedsNavn";
 import { useFeatures } from "../map/useFeatures";
 import { Fill, Stroke, Style } from "ol/style";
 
@@ -30,8 +30,8 @@ export function KommuneAside() {
         <div onMouseLeave={() => setActiveFeature(undefined)}>
           {visibleFeatures
             .sort((a, b) =>
-              getStedsNavn(a.getProperties()).localeCompare(
-                getStedsNavn(b.getProperties()),
+              getStedsnavn(a.getProperties()).localeCompare(
+                getStedsnavn(b.getProperties()),
               ),
             )
             .map((k) => (
@@ -40,7 +40,7 @@ export function KommuneAside() {
                 key={k.getProperties().kommunenummer}
                 className={k === activeFeature ? "active" : ""}
               >
-                {getStedsNavn(k.getProperties())}
+                {getStedsnavn(k.getProperties())}
               </div>
             ))}
         </div>
